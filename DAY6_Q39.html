@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Event Loop Visualizer</h2>
+
+<div id="stack">Call Stack</div>
+<div id="api">Web API</div>
+<div id="queue">Callback Queue</div>
+
+<button onclick="run()">Run</button>
+
+<script>
+function run() {
+
+    document.getElementById("stack").innerHTML =
+        "Call Stack: setTimeout";
+
+    document.getElementById("api").innerHTML =
+        "Web API: Waiting";
+
+    setTimeout(() => {
+
+        document.getElementById("queue").innerHTML =
+            "Callback Queue: Callback Ready";
+
+        document.getElementById("stack").innerHTML =
+            "Call Stack: Executing Callback";
+
+    }, 2000);
+}
+</script>
+
+</body>
+</html>
